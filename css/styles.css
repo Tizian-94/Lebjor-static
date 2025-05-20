@@ -1,0 +1,385 @@
+body {
+    font-family: 'Merriweather', serif; /* Elegant, traditional font for content */
+    background-color: #f9f5f1; /* Warm, natural off-white */
+    color: #3b302a; /* Rich brown text */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(235, 222, 209, 0.9), rgba(235, 222, 209, 0.9))
+}
+
+header {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add depth */
+}
+
+header nav a {
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem 0;
+}
+
+/* Add this at the top of your styles.css */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+footer {
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    background-color: rgba(59, 48, 42, 0.95); /* Match navbar color */
+    padding: 1.5rem 0;
+}
+
+.social-icon {
+    width: 25px;
+    height: 25px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Add mobile-specific styles */
+@media (max-width: 768px) {
+    footer .row {
+        gap: 1.5rem; /* Add space between stacked columns */
+    }
+
+    footer a[href^="mailto:"] {
+        font-size: 0.9rem;
+    }
+}
+
+/* Ensure container doesn't overflow */
+.container {
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.carousel {
+    margin: 2rem 0;
+    border: 2px solid #8c7156;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.carousel-item {
+    max-height: 600px;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 600px;
+}
+
+.carousel-caption {
+    background: rgba(59, 48, 42, 0.7);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.carousel-image {
+    width: 70%; /* Ensures the image spans the full width of the carousel */
+    max-height: 500px; /* Set the maximum height for all images */
+    object-fit: cover; /* Ensures the image scales while cropping to fit the set dimensions */
+}
+.carousel-caption h5, 
+.carousel-caption p {
+    text-shadow: 4px 4px 8px rgba(0, 0, 1, 0.9); /* Adds a subtle shadow behind the text */
+    color: #fff; /* Ensures the text remains readable on various image backgrounds */
+}
+
+.navbar {
+    background-color: rgba(59, 48, 42, 0.95); /* Slight translucency for navbar */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #f9f5f1 !important; /* Elegant contrast */
+    text-transform: uppercase;
+}
+
+.nav-link {
+    color: #f9f5f1 !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav-link:hover {
+    color: #c5a17a !important; /* Highlight with a warm gold */
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: rgba(92, 70, 55, 0.95);
+    color: #f9f5f1;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #c5a17a;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+.btn {
+    background-color: #8c7156 !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 0.5rem 1.5rem !important;
+    font-size: 1rem !important;
+    border-radius: 2rem !important;
+    transition: background-color 0.3s, transform 0.2s !important;
+}
+
+.btn:hover {
+    background-color: #c5a17a !important;
+    transform: translateY(-3px) !important;
+}
+
+/* Specific overrides for Bootstrap classes */
+.btn-primary {
+    background-color: #8c7156 !important;
+    border-color: #8c7156 !important;
+}
+
+.btn-secondary {
+    background-color: #6c5847 !important;
+    border-color: #6c5847 !important;
+}
+
+/* Remove Bootstrap's default focus styles */
+.btn:focus {
+    box-shadow: none !important;
+}
+
+/* Hero Section */
+.hero {    
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #f9f5f1;
+    color: #f9f5f1;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+    color: #3b302a;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    max-width: 600px;
+    color: #3b302a;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+        max-width: 90vw;
+        padding-right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.75rem;
+        line-height: 1.3;
+    }
+    
+    .hero p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Cards */
+.card {
+    border: 2px solid #b08968; /* Rich brown, mimics wooden edges */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border-color: #865439; /* Slightly darker on hover */
+}
+
+.card-img-top {
+    width: 100%;           /* fill card width */
+    height: 200px;         /* or whatever fixed height you like */
+    object-fit: cover;     /* crop to fill without distortion */
+    object-position: center; /* center the focal point */
+    display: block;
+}
+
+.card-img-top.tall {
+  object-fit: contain;   /* letterbox instead of crop */
+  back
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1.5s ease-in;
+}
+/* Section Animations */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Category Cards */
+.category-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .category-card img {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .category-card .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #3b302a;
+  }
+  
+  .category-card .btn-primary {
+    background-color: #6a4f4b;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .category-card .btn-primary:hover {
+    background-color: #3b302a;
+  }
+  
+  .category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+/* modal */
+.modal-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.modal-body h3 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.modal-body p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* translations */
+[data-translate] {
+    transition: opacity 0.3s ease;
+}
+
+.transitioning {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.logo {
+    width: clamp(90px, 10vw, 200px);
+    height: auto;
+    min-width: 90px;
+    max-height: 50px;
+    aspect-ratio: 90/50;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5))
+            drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+.logo:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8))
+            drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+    transition: transform 0.3s ease, filter 0.3s ease;
+
+}
+.fb {
+    width: auto;
+    height: auto; 
+    min-width: 25px;
+    max-height: 25px;
+}
+
+.ig {
+    width: auto;
+    height: auto; 
+    min-width: 25px;
+    max-height: 25px;
+}
+
+/* Image container with watermark */
+.image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.watermark {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    color: white;
+    font-size: 0.8rem;
+    padding: 2px 8px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 3px;
+    backdrop-filter: blur(2px);
+}
+
+/* For mobile */
+@media (max-width: 768px) {
+    .watermark {
+        font-size: 0.7rem;
+        bottom: 4px;
+        right: 4px;
+    }
+}

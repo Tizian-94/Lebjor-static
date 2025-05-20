@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-translate="shop">Shop - Lebjor Site</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <link rel="icon" href="icons/favicon.ico">
+</head>
+<body>
+  <!-- ==== HEADER/nav ==== -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img class="logo" src="icons/lebjor.svg" alt="Lebjor Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html" data-translate="home">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="shop.html" data-translate="shop">Shop</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html" data-translate="about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html" data-translate="contact">Contact</a></li>
+          </ul>
+        </div>
+        <select id="languageSelector" class="form-select w-auto">
+          <option value="en">English</option>
+          <option value="hr">Hrvatski</option>
+          <option value="cak">Čakavski</option>
+        </select>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==== MAIN content ==== -->
+  <main class="container my-5">
+    <h1 class="text-center mb-4" data-translate="about">About Us</h1>
+    <p data-translate="about_p0"></p>
+    <p data-translate="about_p1"></p>
+    <h2 class="mt-4" data-translate="history">History</h2>
+    <p data-translate="about_p2"></p>
+    <p class="mt-4" data-translate="about_p3"></p>
+  </main>
+
+  <!-- ==== FOOTER ==== -->
+<footer class="bg-dark text-white py-3">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4"> <!-- Added grid gutter -->
+            <div class="col text-center text-md-start">
+                <div class="d-flex justify-content-center gap-3"> <!-- Added flex for social icons -->
+                    <a href="https://www.facebook.com/lebjor">
+                        <img class="social-icon" src='icons/fb.ico'>
+                    </a>
+                    <a href="https://www.instagram.com/lebjor_/">
+                        <img class="social-icon" src='icons/ig.ico'>
+                    </a>
+                </div>
+            </div>
+            <div class="col text-center">
+                <p class="mb-0" data-translate="copyright">&copy; 2024 Lebjor Site. All rights reserved.</p>
+            </div>
+            <div class="col text-center text-md-end">
+                <div class="d-flex flex-column">
+                    <a href="mailto:lebjor.design@gmail.com">lebjor.design@gmail.com</a>
+                    <p class="mb-0" data-translate="address">Address: Studena 22, 51217 Klana</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/translations.js"></script>

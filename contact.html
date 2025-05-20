@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-translate="contactus">Contact Us - Lebjor Site</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <link rel="icon" href="icons/favicon.ico">
+</head>
+<body>
+  <!-- ==== HEADER/nav ==== -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img class="logo" src="icons/lebjor.svg" alt="Lebjor Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html" data-translate="home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="shop.html" data-translate="shop">Shop</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html" data-translate="about">About</a></li>
+            <li class="nav-item"><a class="nav-link active" href="contact.html" data-translate="contact">Contact</a></li>
+          </ul>
+        </div>
+        <select id="languageSelector" class="form-select w-auto">
+          <option value="en">English</option>
+          <option value="hr">Hrvatski</option>
+          <option value="cak">Čakavski</option>
+        </select>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==== MAIN content ==== -->
+  <main class="container my-5">
+    <h1 class="text-center mb-4" data-translate="contactus">Contact Us</h1>
+    <p data-translate="love_to_hear"></p>
+    <ul>
+      <li><a href="mailto:lebjor.design@gmail.com">Email: lebjor.design@gmail.com</a></li>
+      <li data-translate="address"></li>
+      <li data-translate="service_type"></li>
+      <li data-translate="owner_name"></li>
+      <li data-translate="oib"></li>
+    </ul>
+    <div class="my-4" style="width: 100%; height: 400px;">
+      <iframe width="100%" height="100%" frameborder="0" scrolling="no" 
+              src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=Studena%2022,%2051217%20Klana+(Lebjor)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+      </iframe>
+    </div>
+
+    <form method="post" action="/send-message/">
+      <div class="mb-3">
+        <label for="name" class="form-label" data-translate="your_name">Your Name</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label" data-translate="your_email">Your Email</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label" data-translate="your_message">Your Message</label>
+        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" data-translate="send_message">Send Message</button>
+    </form>
+  </main>
+
+  <!-- ==== FOOTER ==== -->
+  <footer class="bg-dark text-white py-3">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col text-center text-md-start">
+          <div class="d-flex justify-content-center gap-3">
+            <a href="#"><img class="social-icon" src="icons/fb.ico" alt="Facebook"></a>
+            <a href="#"><img class="social-icon" src="icons/ig.ico" alt="Instagram"></a>
+          </div>
+        </div>
+        <div class="col text-center">
+          <p class="mb-0" data-translate="copyright">&copy; 2024 Lebjor Site. All rights reserved.</p>
+        </div>
+        <div class="col text-center text-md-end">
+          <div class="d-flex flex-column">
+            <a href="mailto:lebjor.design@gmail.com">lebjor.design@gmail.com</a>
+            <p class="mb-0" data-translate="address">Address: Studena 22, 51217 Klana</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
