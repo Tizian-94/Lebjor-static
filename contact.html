@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,6 +9,18 @@
   <link rel="icon" href="icons/favicon.ico">
 </head>
 <body>
+<script>
+// Set language immediately on page load
+(function() {
+    const savedLang = localStorage.getItem('selectedLanguage');
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    
+    // Prefer URL parameter, then localStorage, then HTML default
+    const lang = urlLang || savedLang || document.documentElement.lang || 'en';
+    document.documentElement.lang = lang;
+})();
+</script>
   <!-- ==== HEADER/nav ==== -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -24,16 +35,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="index.html" data-translate="home">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="shop.html" data-translate="shop">Shop</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html" data-translate="about">About</a></li>
-            <li class="nav-item"><a class="nav-link active" href="contact.html" data-translate="contact">Contact</a></li>
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="index.html?lang=" data-translate="home">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="shop.html?lang=" data-translate="shop">Shop</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html?lang=" data-translate="about">About</a></li>
+              <li class="nav-item"><a class="nav-link active" href="contact.html?lang=" data-translate="contact">Contact</a></li>
           </ul>
         </div>
-        <select id="languageSelector" class="form-select w-auto">
+        <select id="languageSelector">
           <option value="en">English</option>
           <option value="hr">Hrvatski</option>
-          <option value="cak">Čakavski</option>
         </select>
       </div>
     </nav>
@@ -95,10 +106,14 @@
       </div>
     </div>
   </footer>
-
+</body>
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/translations.js"></script>
-  <script src="js/main.js"></script>
-</body>
+<script>
+    // Set lang attribute immediately on page load
+    document.documentElement.lang = localStorage.getItem('selectedLanguage') || 'en';
+</script>
+<script src="js/main.js"></script>
+
 </html>

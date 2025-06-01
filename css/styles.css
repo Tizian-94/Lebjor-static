@@ -383,3 +383,8 @@ footer a:hover {
         right: 4px;
     }
 }
+
+#languageSelector, #languageSelector option {
+    color: #000 !important; 
+    background: #fff !important;
+}

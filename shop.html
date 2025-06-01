@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,6 +9,18 @@
   <link rel="icon" href="icons/favicon.ico">
 </head>
 <body>
+<script>
+// Set language immediately on page load
+(function() {
+    const savedLang = localStorage.getItem('selectedLanguage');
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    
+    // Prefer URL parameter, then localStorage, then HTML default
+    const lang = urlLang || savedLang || document.documentElement.lang || 'en';
+    document.documentElement.lang = lang;
+})();
+</script>
   <!-- ==== HEADER/nav ==== -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -24,16 +35,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="index.html" data-translate="home">Home</a></li>
-            <li class="nav-item"><a class="nav-link active" href="shop.html" data-translate="shop">Shop</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html" data-translate="about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html" data-translate="contact">Contact</a></li>
+              <li class="nav-item"><a class="nav-link" href="index.html?lang=" data-translate="home">Home</a></li>
+              <li class="nav-item"><a class="nav-link active" href="shop.html?lang=" data-translate="shop">Shop</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html?lang=" data-translate="about">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html?lang=" data-translate="contact">Contact</a></li>
           </ul>
         </div>
-        <select id="languageSelector" class="form-select w-auto">
+        <select id="languageSelector">
           <option value="en">English</option>
           <option value="hr">Hrvatski</option>
-          <option value="cak">Čakavski</option>
         </select>
       </div>
     </nav>
@@ -43,168 +53,25 @@
   <main class="container my-5">
     <h1 class="text-center mb-4" data-translate="shop">Shop</h1>
     <div class="row g-4">
-      <!-- Item 1 -->
+      <!-- Item 4 -->
       <div class="col-md-4">
         <div class="card h-100">
           <img src="images/img (1).jpg" class="card-img-top" alt="" />
           <div class="card-body d-flex flex-column">
-            <h5 class="card-title" data-translate="item4_title">Rustic Oak Coasters</h5>
+            <h5 class="card-title" data-translate="item4_title">Wood gnome</h5>
             <p class="card-text mb-1">
-              <strong data-translate="item4_category_label">Category:</strong>
-              <span data-translate="item4_category">Coasters</span>
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item4_category">Figurines</span>
+            </p>
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item4_material">Oak, Ash, Alder, Cherry</span>
             </p>
             <p class="card-text mb-3" data-translate="item4_desc">
-              Set of four hand‑carved oak coasters, finished with natural beeswax.
+              Wooden gnome decoration for every space in various sizes.
             </p>
             <div class="mt-auto">
-              <span class="h5" data-translate="item4_price">15 €</span>
-              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 2 -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="images/img (2).jpg" class="card-img-top" alt="" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title" data-translate="item5_title">Maple Wood Serving Board</h5>
-            <p class="card-text mb-1">
-              <strong data-translate="item5_category_label">Category:</strong>
-              <span data-translate="item5_category">Serving Boards</span>
-            </p>
-            <p class="card-text mb-3" data-translate="item5_desc">
-              Elegant maple board with live edge, perfect for cheeses and charcuterie.
-            </p>
-            <div class="mt-auto">
-              <span class="h5" data-translate="item5_price">35 €</span>
-              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 3 -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="images/img (3).jpg" class="card-img-top" alt="" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title" data-translate="item6_title">Cherry Wood Jewelry Box</h5>
-            <p class="card-text mb-1">
-              <strong data-translate="item6_category_label">Category:</strong>
-              <span data-translate="item6_category">Boxes</span>
-            </p>
-            <p class="card-text mb-3" data-translate="item6_desc">
-              Hand‑crafted box with brass hinges and velvet‑lined interior.
-            </p>
-            <div class="mt-auto">
-              <span class="h5" data-translate="item6_price">45 €</span>
-              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 4 -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="images/img (4).jpg" class="card-img-top" alt="" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title" data-translate="item7_title">Walnut Candle Holder</h5>
-            <p class="card-text mb-1">
-              <strong data-translate="item7_category_label">Category:</strong>
-              <span data-translate="item7_category">Home Decor</span>
-            </p>
-            <p class="card-text mb-3" data-translate="item7_desc">
-              Sleek walnut holder for tealights, finished with food‑safe oil.
-            </p>
-            <div class="mt-auto">
-              <span class="h5" data-translate="item7_price">20 €</span>
-              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 5 -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="images/img (7).jpg" class="card-img-top" alt="" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title" data-translate="item8_title">Birch Wood Photo Frame</h5>
-            <p class="card-text mb-1">
-              <strong data-translate="item8_category_label">Category:</strong>
-              <span data-translate="item8_category">Frames</span>
-            </p>
-            <p class="card-text mb-3" data-translate="item8_desc">
-              Minimalist frame for 4×6″ photos, laser‑etched accent on corner.
-            </p>
-            <div class="mt-auto">
-              <span class="h5" data-translate="item8_price">18 €</span>
-              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 6 -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="images/img (8).jpg" class="card-img-top" alt="" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title" data-translate="item9_title">Hand‑Painted Flower Vase</h5>
-            <p class="card-text mb-1">
-              <strong data-translate="item9_category_label">Category:</strong>
-              <span data-translate="item9_category">Vases</span>
-            </p>
-            <p class="card-text mb-3" data-translate="item9_desc">
-              Ceramic vase dipped in epoxy with pressed flowers inside.
-            </p>
-            <div class="mt-auto">
-              <span class="h5" data-translate="item9_price">30 €</span>
-              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 7 -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="images/img (10).jpg" class="card-img-top" alt="" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title" data-translate="item10_title">Personalized Wood Keychain</h5>
-            <p class="card-text mb-1">
-              <strong data-translate="item10_category_label">Category:</strong>
-              <span data-translate="item10_category">Accessories</span>
-            </p>
-            <p class="card-text mb-3" data-translate="item10_desc">
-              Laser‑engraved initial on a smooth oak key fob, with stainless ring.
-            </p>
-            <div class="mt-auto">
-              <span class="h5" data-translate="item10_price">8 €</span>
-              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 8 -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="images/img (11).jpg" class="card-img-top" alt="" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title" data-translate="item11_title">Engraved Wine Box</h5>
-            <p class="card-text mb-1">
-              <strong data-translate="item11_category_label">Category:</strong>
-              <span data-translate="item11_category">Gift Boxes</span>
-            </p>
-            <p class="card-text mb-3" data-translate="item11_desc">
-              Holds two bottles; hinged lid with custom message engraving.
-            </p>
-            <div class="mt-auto">
-              <span class="h5" data-translate="item11_price">50 €</span>
+              <span class="h5" data-translate="item4_price">10-30 €</span>
               <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
             </div>
           </div>
@@ -214,186 +81,97 @@
       <!-- Item 9 -->
       <div class="col-md-4">
         <div class="card h-100">
-          <img src="images/img (12).jpg" class="card-img-top" alt="" />
+          <img src="images/img (8).jpg" class="card-img-top" alt="" />
           <div class="card-body d-flex flex-column">
-            <h5 class="card-title" data-translate="item12_title">Bamboo Utensil Set</h5>
+            <h5 class="card-title" data-translate="item9_title">Serving tray</h5>
             <p class="card-text mb-1">
-              <strong data-translate="item12_category_label">Category:</strong>
-              <span data-translate="item12_category">Kitchen</span>
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item9_category">Tray</span>
             </p>
-            <p class="card-text mb-3" data-translate="item12_desc">
-              Four‑piece set: spoon, fork, knife and chopsticks in a canvas pouch.
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item9_material">Alder</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item9_desc">
+              Serving tray for all occasions, can be decorated with an inscription or drawing of your choice.
             </p>
             <div class="mt-auto">
-              <span class="h5" data-translate="item12_price">12 €</span>
+              <span class="h5" data-translate="item9_price">45-130 €</span>
               <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Item 10 -->
+      <!-- Item 7 -->
       <div class="col-md-4">
         <div class="card h-100">
-          <img src="images/img (13).jpg" class="card-img-top" alt="" />
+          <img src="images/img (4).jpg" class="card-img-top" alt="" />
           <div class="card-body d-flex flex-column">
-            <h5 class="card-title" data-translate="item12_title">Bamboo Utensil Set</h5>
+            <h5 class="card-title" data-translate="item7_title">Fresh flower arrangement in a basket</h5>
             <p class="card-text mb-1">
-              <strong data-translate="item12_category_label">Category:</strong>
-              <span data-translate="item12_category">Kitchen</span>
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item7_category">Arrangement</span>
             </p>
-            <p class="card-text mb-3" data-translate="item12_desc">
-              Four‑piece set: spoon, fork, knife and chopsticks in a canvas pouch.
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item7_material">Anastasia, daisy, eucalyptus with dry additives</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item7_desc">
+              Fresh flower arrangement in a basket with dry additives.
             </p>
             <div class="mt-auto">
-              <span class="h5" data-translate="item12_price">12 €</span>
+              <span class="h5" data-translate="item7_price">45-80 €</span>
               <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Item 11 -->
+      <!-- Item 6 -->
       <div class="col-md-4">
         <div class="card h-100">
-          <img src="images/img (14).jpg" class="card-img-top" alt="" />
+          <img src="images/img (3).jpg" class="card-img-top" alt="" />
           <div class="card-body d-flex flex-column">
-            <h5 class="card-title" data-translate="item12_title">Bamboo Utensil Set</h5>
+            <h5 class="card-title" data-translate="item6_title">Fresh flower arrangement</h5>
             <p class="card-text mb-1">
-              <strong data-translate="item12_category_label">Category:</strong>
-              <span data-translate="item12_category">Kitchen</span>
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item6_category">Arrangement</span>
             </p>
-            <p class="card-text mb-3" data-translate="item12_desc">
-              Four‑piece set: spoon, fork, knife and chopsticks in a canvas pouch.
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item6_material">Gypsophila, rose, carnation</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item6_desc">
+              Fresh flower arrangement for a wedding in beautiful, delicate shades.
             </p>
             <div class="mt-auto">
-              <span class="h5" data-translate="item12_price">12 €</span>
+              <span class="h5" data-translate="item6_price">60-200 €</span>
               <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Item 12 -->
+      <!-- Item 5 -->
       <div class="col-md-4">
         <div class="card h-100">
-          <img src="images/img (15).jpg" class="card-img-top" alt="" />
+          <img src="images/img (2).jpg" class="card-img-top" alt="" />
           <div class="card-body d-flex flex-column">
-            <h5 class="card-title" data-translate="item12_title">Bamboo Utensil Set</h5>
+            <h5 class="card-title" data-translate="item5_title">Ashtray</h5>
             <p class="card-text mb-1">
-              <strong data-translate="item12_category_label">Category:</strong>
-              <span data-translate="item12_category">Kitchen</span>
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item5_category">Ashtray</span>
             </p>
-            <p class="card-text mb-3" data-translate="item12_desc">
-              Four‑piece set: spoon, fork, knife and chopsticks in a canvas pouch.
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item5_material">Epoxy resin, cork, shells</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item5_desc">
+              Epoxy resin ashtray with cork, sea sand with shells on the bottom.
             </p>
             <div class="mt-auto">
-              <span class="h5" data-translate="item12_price">12 €</span>
-              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 13 -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="images/img (16).jpg" class="card-img-top" alt="" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title" data-translate="item12_title">Bamboo Utensil Set</h5>
-            <p class="card-text mb-1">
-              <strong data-translate="item12_category_label">Category:</strong>
-              <span data-translate="item12_category">Kitchen</span>
-            </p>
-            <p class="card-text mb-3" data-translate="item12_desc">
-              Four‑piece set: spoon, fork, knife and chopsticks in a canvas pouch.
-            </p>
-            <div class="mt-auto">
-              <span class="h5" data-translate="item12_price">12 €</span>
-              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 14 -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="images/img (17).jpg" class="card-img-top" alt="" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title" data-translate="item12_title">Bamboo Utensil Set</h5>
-            <p class="card-text mb-1">
-              <strong data-translate="item12_category_label">Category:</strong>
-              <span data-translate="item12_category">Kitchen</span>
-            </p>
-            <p class="card-text mb-3" data-translate="item12_desc">
-              Four‑piece set: spoon, fork, knife and chopsticks in a canvas pouch.
-            </p>
-            <div class="mt-auto">
-              <span class="h5" data-translate="item12_price">12 €</span>
-              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 15 -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="images/img (18).jpg" class="card-img-top" alt="" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title" data-translate="item12_title">Bamboo Utensil Set</h5>
-            <p class="card-text mb-1">
-              <strong data-translate="item12_category_label">Category:</strong>
-              <span data-translate="item12_category">Kitchen</span>
-            </p>
-            <p class="card-text mb-3" data-translate="item12_desc">
-              Four‑piece set: spoon, fork, knife and chopsticks in a canvas pouch.
-            </p>
-            <div class="mt-auto">
-              <span class="h5" data-translate="item12_price">12 €</span>
-              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 16 -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="images/img (19).jpg" class="card-img-top" alt="" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title" data-translate="item12_title">Bamboo Utensil Set</h5>
-            <p class="card-text mb-1">
-              <strong data-translate="item12_category_label">Category:</strong>
-              <span data-translate="item12_category">Kitchen</span>
-            </p>
-            <p class="card-text mb-3" data-translate="item12_desc">
-              Four‑piece set: spoon, fork, knife and chopsticks in a canvas pouch.
-            </p>
-            <div class="mt-auto">
-              <span class="h5" data-translate="item12_price">12 €</span>
-              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 17 -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="images/img (20).jpg" class="card-img-top" alt="" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title" data-translate="item12_title">Bamboo Utensil Set</h5>
-            <p class="card-text mb-1">
-              <strong data-translate="item12_category_label">Category:</strong>
-              <span data-translate="item12_category">Kitchen</span>
-            </p>
-            <p class="card-text mb-3" data-translate="item12_desc">
-              Four‑piece set: spoon, fork, knife and chopsticks in a canvas pouch.
-            </p>
-            <div class="mt-auto">
-              <span class="h5" data-translate="item12_price">12 €</span>
+              <span class="h5" data-translate="item5_price">100-400 €</span>
               <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
             </div>
           </div>
@@ -403,27 +181,830 @@
       <!-- Item 18 -->
       <div class="col-md-4">
         <div class="card h-100">
-          <img src="images/img (22).jpg" class="card-img-top" alt="" />
+          <img src="images/img (18).jpg" class="card-img-top" alt="" />
           <div class="card-body d-flex flex-column">
-            <h5 class="card-title" data-translate="item12_title">Bamboo Utensil Set</h5>
+            <h5 class="card-title" data-translate="item18_title">Cup</h5>
             <p class="card-text mb-1">
-              <strong data-translate="item12_category_label">Category:</strong>
-              <span data-translate="item12_category">Kitchen</span>
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item18_category">Cup</span>
             </p>
-            <p class="card-text mb-3" data-translate="item12_desc">
-              Four‑piece set: spoon, fork, knife and chopsticks in a canvas pouch.
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item18_material">Padouk, alder</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item18_desc">
+              Handmade mug for decoration.
             </p>
             <div class="mt-auto">
-              <span class="h5" data-translate="item12_price">12 €</span>
+              <span class="h5" data-translate="item18_price">15-30 €</span>
               <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- Item 17 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/img (17).jpg" class="card-img-top" alt="" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title" data-translate="item17_title">Bowl</h5>
+            <p class="card-text mb-1">
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item17_category">Bowl</span>
+            </p>
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item17_material">Alder</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item17_desc">
+              Alder wood bowl.
+            </p>
+            <div class="mt-auto">
+              <span class="h5" data-translate="item17_price">20-90 €</span>
+              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 15 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/img (15).jpg" class="card-img-top" alt="" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title" data-translate="item15_title">Cake stand</h5>
+            <p class="card-text mb-1">
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item15_category">Cake stand</span>
+            </p>
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item15_material">Oak, alder</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item15_desc">
+              Handmade cake stand made of oak and alder wood with a bio epoxy resin coating for easier maintenance.
+            </p>
+            <div class="mt-auto">
+              <span class="h5" data-translate="item15_price">25-90 €</span>
+              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 14 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/img (14).jpg" class="card-img-top" alt="" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title" data-translate="item14_title">Ashtray</h5>
+            <p class="card-text mb-1">
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item14_category">Ashtray</span>
+            </p>
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item14_material">Epoxy resin, cork, shells</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item14_desc">
+              Epoxy resin ashtray with cork, sea sand with shells on the bottom.
+            </p>
+            <div class="mt-auto">
+              <span class="h5" data-translate="item14_price">90-300 €</span>
+              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 13 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/img (13).jpg" class="card-img-top" alt="" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title" data-translate="item13_title">Knife-shaped tray</h5>
+            <p class="card-text mb-1">
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item13_category">Tray</span>
+            </p>
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item13_material">Oak</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item13_desc">
+              Knife-shaped serving tray with tribal design.
+            </p>
+            <div class="mt-auto">
+              <span class="h5" data-translate="item13_price">30-80 €</span>
+              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 12 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/img (12).jpg" class="card-img-top" alt="" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title" data-translate="item12_title">Serving tray</h5>
+            <p class="card-text mb-1">
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item12_category">Tray</span>
+            </p>
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item12_material">Alder, olive</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item12_desc">
+              Alder wood serving tray with olive handles and drawn wheat.
+            </p>
+            <div class="mt-auto">
+              <span class="h5" data-translate="item12_price">30-130 €</span>
+              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 11 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/img (11).jpg" class="card-img-top" alt="" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title" data-translate="item11_title">Serving tray</h5>
+            <p class="card-text mb-1">
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item11_category">Tray</span>
+            </p>
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item11_material">Wild apple, epoxy resin</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item11_desc">
+              Wild apple serving tray embedded in epoxy resin.
+            </p>
+            <div class="mt-auto">
+              <span class="h5" data-translate="item11_price">40-180 €</span>
+              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 10 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/img (10).jpg" class="card-img-top" alt="" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title" data-translate="item10_title">Ashtray boat</h5>
+            <p class="card-text mb-1">
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item10_category">Ashtray</span>
+            </p>
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item10_material">Epoxy resin, cork, shells</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item10_desc">
+              Ashtray boat made of epoxy resin with cork and shells.
+            </p>
+            <div class="mt-auto">
+              <span class="h5" data-translate="item10_price">35-100 €</span>
+              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 27 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/img (27).jpg" class="card-img-top" alt="" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title" data-translate="item27_title">Serving tray</h5>
+            <p class="card-text mb-1">
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item27_category">Tray</span>
+            </p>
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item27_material">Maple, olives</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item27_desc">
+              Maple serving tray with olive handles, massive and sturdy with custom inscription.
+            </p>
+            <div class="mt-auto">
+              <span class="h5" data-translate="item27_price">60-200 €</span>
+              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 20 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/img (20).jpg" class="card-img-top" alt="" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title" data-translate="item20_title">Arrangement</h5>
+            <p class="card-text mb-1">
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item20_category">Arrangement</span>
+            </p>
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item20_material">Osteospermum, heather, anastasia, moss with dry additives</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item20_desc">
+              Arrangement on a wooden plate for any occasion with fresh flowers.
+            </p>
+            <div class="mt-auto">
+              <span class="h5" data-translate="item20_price">50-140 €</span>
+              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 25 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/img (25).jpg" class="card-img-top" alt="" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title" data-translate="item25_title">Hanger scissors</h5>
+            <p class="card-text mb-1">
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item25_category">Hanger</span>
+            </p>
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item25_material">Plywood 18mm</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item25_desc">
+              Scissors hanger decoration for hairdressing or tailoring salon.
+            </p>
+            <div class="mt-auto">
+              <span class="h5" data-translate="item25_price">15-50 €</span>
+              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 23 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/img (23).jpg" class="card-img-top" alt="" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title" data-translate="item23_title">Bowl with lid</h5>
+            <p class="card-text mb-1">
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item23_category">Bowl</span>
+            </p>
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item23_material">Birch</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item23_desc">
+              Handmade bowl with lid.
+            </p>
+            <div class="mt-auto">
+              <span class="h5" data-translate="item23_price">30-80 €</span>
+              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 57 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/img (57).jpg" class="card-img-top" alt="" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title" data-translate="item57_title">Decorative box</h5>
+            <p class="card-text mb-1">
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item57_category">Box</span>
+            </p>
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item57_material">Fir</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item57_desc">
+              Decorative gift box.
+            </p>
+            <div class="mt-auto">
+              <span class="h5" data-translate="item57_price">25-90 €</span>
+              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 19 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/img (19).jpg" class="card-img-top" alt="" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title" data-translate="item19_title">Trophy stand</h5>
+            <p class="card-text mb-1">
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item19_category">Trophy stand</span>
+            </p>
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item19_material">Maple, olive</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item19_desc">
+              Trophy stand with a drawn picture.
+            </p>
+            <div class="mt-auto">
+              <span class="h5" data-translate="item19_price">20-50 €</span>
+              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 36 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/img (36).jpg" class="card-img-top" alt="" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title" data-translate="item36_title">Bowl</h5>
+            <p class="card-text mb-1">
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item36_category">Bowl</span>
+            </p>
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item36_material">Wild pear</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item36_desc">
+              Wild pear bowl.
+            </p>
+            <div class="mt-auto">
+              <span class="h5" data-translate="item36_price">30-80 €</span>
+              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 31 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/img (31).jpg" class="card-img-top" alt="" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title" data-translate="item31_title">Trophy stand</h5>
+            <p class="card-text mb-1">
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item31_category">Trophy stand</span>
+            </p>
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item31_material">Maple, olive</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item31_desc">
+              Trophy stand with a drawn picture.
+            </p>
+            <div class="mt-auto">
+              <span class="h5" data-translate="item31_price">20-50 €</span>
+              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 29 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/img (29).jpg" class="card-img-top" alt="" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title" data-translate="item29_title">Ashtray</h5>
+            <p class="card-text mb-1">
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item29_category">Ashtray</span>
+            </p>
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item29_material">Epoxy resin, olive</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item29_desc">
+              Epoxy resin ashtray with olive.
+            </p>
+            <div class="mt-auto">
+              <span class="h5" data-translate="item29_price">100-400 €</span>
+              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Item 28 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/img (28).jpg" class="card-img-top" alt="" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title" data-translate="item28_title">Trophy stand</h5>
+            <p class="card-text mb-1">
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item28_category">Trophy stand</span>
+            </p>
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item28_material">Oak</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item28_desc">
+              Trophy stand with a drawn picture.
+            </p>
+            <div class="mt-auto">
+              <span class="h5" data-translate="item28_price">20-50 €</span>
+              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 45 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/img (45).jpg" class="card-img-top" alt="" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title" data-translate="item45_title">Ornamental mushroom</h5>
+            <p class="card-text mb-1">
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item45_category">Figurines</span>
+            </p>
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item45_material">Maple, white</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item45_desc">
+              Wooden decorative mushrooms of all sizes.
+            </p>
+            <div class="mt-auto">
+              <span class="h5" data-translate="item45_price">6-40 €</span>
+              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 43 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/img (43).jpg" class="card-img-top" alt="" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title" data-translate="item43_title">Bowl</h5>
+            <p class="card-text mb-1">
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item43_category">Bowl</span>
+            </p>
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item43_material">Alder</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item43_desc">
+              Handmade bowl.
+            </p>
+            <div class="mt-auto">
+              <span class="h5" data-translate="item43_price">20-60 €</span>
+              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 41 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/img (41).jpg" class="card-img-top" alt="" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title" data-translate="item41_title">Vase</h5>
+            <p class="card-text mb-1">
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item41_category">Vase</span>
+            </p>
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item41_material">Alder</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item41_desc">
+              Alder wooden vase with glass insert that can be used for fresh flowers.
+            </p>
+            <div class="mt-auto">
+              <span class="h5" data-translate="item41_price">20-90 €</span>
+              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 39 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/img (39).jpg" class="card-img-top" alt="" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title" data-translate="item39_title">Personalized gift</h5>
+            <p class="card-text mb-1">
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item39_category">Personalized gift</span>
+            </p>
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item39_material">Oak</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item39_desc">
+              Personalized gift made to order, written and drawn with pyrography.
+            </p>
+            <div class="mt-auto">
+              <span class="h5" data-translate="item39_price">30-100 €</span>
+              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Item 53 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/img (53).jpg" class="card-img-top" alt="" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title" data-translate="item53_title">Apple decoration</h5>
+            <p class="card-text mb-1">
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item53_category">Decoration</span>
+            </p>
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item53_material">Oak</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item53_desc">
+              Apple-shaped ornament with a heart, a symbol of health.
+            </p>
+            <div class="mt-auto">
+              <span class="h5" data-translate="item53_price">10-30 €</span>
+              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Item 50 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/img (50).jpg" class="card-img-top" alt="" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title" data-translate="item50_title">Tray</h5>
+            <p class="card-text mb-1">
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item50_category">Tray</span>
+            </p>
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item50_material">Cherry and olive</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item50_desc">
+              Serving tray.
+            </p>
+            <div class="mt-auto">
+              <span class="h5" data-translate="item50_price">40-90 €</span>
+              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Item 55 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/img (55).jpg" class="card-img-top" alt="" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title" data-translate="item55_title">Decorative earrings</h5>
+            <p class="card-text mb-1">
+              <strong data-translate="category_label">Category:</strong>
+              <span data-translate="item55_category">Decoration</span>
+            </p>
+            <p>
+              <strong data-translate="material_label">Material:</strong>
+              <span data-translate="item55_material">Orchid, epoxy resin</span>
+            </p>
+            <p class="card-text mb-3" data-translate="item55_desc">
+              Decorative earrings with natural orchid coated with epoxy resin for strength.
+            </p>
+            <div class="mt-auto">
+              <span class="h5" data-translate="item55_price">8-20 €</span>
+              <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <!-- Item 60 -->
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="images/img (60.1).png" class="card-img-top" alt="Tray" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title" data-translate="item60_title">Tray</h5>
+          <p class="card-text mb-1">
+            <strong data-translate="category_label">Category:</strong>
+            <span data-translate="item60_category">Tray</span>
+          </p>
+          <p>
+            <strong data-translate="material_label">Material:</strong>
+            <span data-translate="item60_material">Alder</span>
+          </p>
+          <p class="card-text mb-3" data-translate="item60_desc">
+            Unique looking serving tray
+          </p>
+          <div class="mt-auto">
+            <span class="h5" data-translate="item60_price">30-70 €</span>
+            <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </main>
-  <!-- Item Detail Modal -->
+
+    <!-- Item 61 -->
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="images/img (61.1).png" class="card-img-top" alt="Serving tray" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title" data-translate="item61_title">Serving tray</h5>
+          <p class="card-text mb-1">
+            <strong data-translate="category_label">Category:</strong>
+            <span data-translate="item61_category">Tray</span>
+          </p>
+          <p>
+            <strong data-translate="material_label">Material:</strong>
+            <span data-translate="item61_material">Walnut</span>
+          </p>
+          <p class="card-text mb-3" data-translate="item61_desc">
+            Serving tray with iron handles
+          </p>
+          <div class="mt-auto">
+            <span class="h5" data-translate="item61_price">40-90 €</span>
+            <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 62 -->
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="images/img (62).png" class="card-img-top" alt="Mugs" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title" data-translate="item62_title">Mugs</h5>
+          <p class="card-text mb-1">
+            <strong data-translate="category_label">Category:</strong>
+            <span data-translate="item62_category">Mugs</span>
+          </p>
+          <p>
+            <strong data-translate="material_label">Material:</strong>
+            <span data-translate="item62_material">Maple</span>
+          </p>
+          <p class="card-text mb-3" data-translate="item62_desc">
+            Handmade mugs, coated with bio epoxy resin so they can be used
+          </p>
+          <div class="mt-auto">
+            <span class="h5" data-translate="item62_price">20-40 €</span>
+            <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 63 -->
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="images/img (63).png" class="card-img-top" alt="Glasses" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title" data-translate="item63_title">Glasses</h5>
+          <p class="card-text mb-1">
+            <strong data-translate="category_label">Category:</strong>
+            <span data-translate="item63_category">Glasses</span>
+          </p>
+          <p>
+            <strong data-translate="material_label">Material:</strong>
+            <span data-translate="item63_material">Linden tree</span>
+          </p>
+          <p class="card-text mb-3" data-translate="item63_desc">
+            Handmade glasses, coated with bio epoxy resin so they can be used
+          </p>
+          <div class="mt-auto">
+            <span class="h5" data-translate="item63_price">8-20 €</span>
+            <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 64 -->
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="images/img (64).jpg" class="card-img-top" alt="Tray" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title" data-translate="item64_title">Tray</h5>
+          <p class="card-text mb-1">
+            <strong data-translate="category_label">Category:</strong>
+            <span data-translate="item64_category">Tray</span>
+          </p>
+          <p>
+            <strong data-translate="material_label">Material:</strong>
+            <span data-translate="item64_material">Alder</span>
+          </p>
+          <p class="card-text mb-3" data-translate="item64_desc">
+            Rustic-looking serving tray
+          </p>
+          <div class="mt-auto">
+            <span class="h5" data-translate="item64_price">40-80 €</span>
+            <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 65 -->
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="images/img (65).jpg" class="card-img-top" alt="Glasses" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title" data-translate="item65_title">Glasses</h5>
+          <p class="card-text mb-1">
+            <strong data-translate="category_label">Category:</strong>
+            <span data-translate="item65_category">Glasses</span>
+          </p>
+          <p>
+            <strong data-translate="material_label">Material:</strong>
+            <span data-translate="item65_material">Olive</span>
+          </p>
+          <p class="card-text mb-3" data-translate="item65_desc">
+            Olive cups coated with bio epoxy resin so they can be used
+          </p>
+          <div class="mt-auto">
+            <span class="h5" data-translate="item65_price">10-25 €</span>
+            <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 66 -->
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="images/img (66).jpg" class="card-img-top" alt="Tray" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title" data-translate="item66_title">Tray</h5>
+          <p class="card-text mb-1">
+            <strong data-translate="category_label">Category:</strong>
+            <span data-translate="item66_category">Tray</span>
+          </p>
+          <p>
+            <strong data-translate="material_label">Material:</strong>
+            <span data-translate="item66_material">Wild pear</span>
+          </p>
+          <p class="card-text mb-3" data-translate="item66_desc">
+            Wild pear serving tray
+          </p>
+          <div class="mt-auto">
+            <span class="h5" data-translate="item66_price">60-130 €</span>
+            <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 67 -->
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="images/img (67).jpg" class="card-img-top" alt="Bowl" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title" data-translate="item67_title">Bowl</h5>
+          <p class="card-text mb-1">
+            <strong data-translate="category_label">Category:</strong>
+            <span data-translate="item67_category">Bowl</span>
+          </p>
+          <p>
+            <strong data-translate="material_label">Material:</strong>
+            <span data-translate="item67_material">Walnut</span>
+          </p>
+          <p class="card-text mb-3" data-translate="item67_desc">
+            Rustic-looking walnut wood bowl
+          </p>
+          <div class="mt-auto">
+            <span class="h5" data-translate="item67_price">30-80 €</span>
+            <a href="#" class="btn btn-primary float-end view-item-btn" data-translate="view_item">View Item</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+<!-- Item Detail Modal -->
   <div class="modal fade" id="itemModal" tabindex="-1" aria-labelledby="itemModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
@@ -473,6 +1054,11 @@
         </div>
     </div>
 </footer>
+</body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/main.js"></script>
+<script>
+    // Set lang attribute immediately on page load
+    document.documentElement.lang = localStorage.getItem('selectedLanguage') || 'en';
+</script>
 <script src="js/translations.js"></script>
+<script src="js/main.js"></script>
