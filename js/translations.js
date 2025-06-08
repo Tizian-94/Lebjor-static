@@ -37,6 +37,9 @@ const TRANSLATIONS = {
        decoration_category:"Decorations",
        mugs_category:"Mugs",
        glasses_category:"Glasses",
+
+       woodwork_category:"Woodwork",
+       other_category:"Other",
        //About Us
        history:"History",
        about_p0: "We offer services for creating beautiful flower arrangements and bouquets that will bring a touch of elegance to your occasions. In addition, we create personalized wooden gifts, perfect for any occasion. Whether you want to decorate a wedding venue or find a unique gift, we are here to realize your ideas and provide you with unforgettable moments. We also deliver to the desired location.",
@@ -347,6 +350,9 @@ const TRANSLATIONS = {
        decoration_category:"Ukrasi",
        mugs_category:"Krigle",
        glasses_category:"Čaše",
+        
+       woodwork_category:"Stolarija",
+       other_category:"Ostalo",
        //About Us
        history:"Povjest",
        about_p0: "Nudimo usluge izrade prekrasnih cvijetnih aranžmana i buketa koji će vašim prigodama donjeti dašak elegancije. Osim toga, izrađujemo personalizirane drvene poklone, savršene za svaku priliku. Bilo da želite ukrasiti prostor za vjenčanje ili pronaći jedinstveni poklon mi smo tu da realiziramo vaše ideje i omogućimo vam nezaboravne trenutke. Također vršimo dostave na željenu lokaciju.",
