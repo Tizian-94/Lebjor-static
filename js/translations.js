@@ -56,7 +56,7 @@ const TRANSLATIONS = {
        about_p10: "straight to your",
        about_p11: "chosen location.",
        about_p12: "Love a creative challenge? So do we! If you have a vision but aren’t sure where to start—reach out. We’d love to hear from you.",      
-       about_p13: "Hi, allow me introduce myself:",
+       about_p13: "Hi, allow me to introduce myself:",
        about_p14: "I’m Stela, a nature lover, ",
        about_p15: "Floral designer and founder",
        about_p16: "of this little dream come true. With years of experience in floral arranging, I officially started my own business in 2023. I’ve always been drawn to unique flower and wood combinations that celebrate natural beauty. My inspiration comes from daily walks through the forest, where I collect everything from tiny flowers and leaves to branches and pieces of wood. What started as a simple hobby soon turned into crafting trays, bowls, vases, and more—many enhanced with epoxy resin for a unique touch. This passion for nature, flowers, and handmade creations has grown into a business rooted in authenticity, creativity, and care.",
@@ -370,7 +370,7 @@ const TRANSLATIONS = {
        woodwork_category:"Stolarija",
        other_category:"Ostalo",
        //About Us
-       history:"Povjest",
+       history:"Povijest",
        about_p0: "Nudimo usluge izrade prekrasnih",
        about_p1: "cvjetnih aranžmana",
        about_p2: "i",
@@ -388,7 +388,7 @@ const TRANSLATIONS = {
        about_p13: "Bok, da se predstavim:",
        about_p14: "Ja sam Stela, veliki ljubitelj cvijeća i prirode.",
        about_p15: "Aranžer sam",
-       about_p16: "s dugogodišnjim iskustvom u toj branši. 2023. godine krenula sam u samostalni obrt, pošto volim svakakve neobične i jedinstvene cvjetne kombinacije koje se mogu iskombinirati i s drvom. Tijekom naših svakodnevnih obiteljskih šetnji šumom počeli smo sa sakupljanjem od najmanjeg cvijeta, lista I grane, do komada drveta; i tako sam krenula u izradu daski, pladnjeva, zdjela, vaza, roto pladnjeva... Postojeću ponudu smo malo nadogradili i dodali epoxy smolu, te dobili još nikatnije stvari. Spojili smo ugodno s korisnim, te nam je od hobija prikupljanja drvenih stvari u šumi, došla ideja za uklopiti sve skupa u jednu cjelinu.",
+       about_p16: "s dugogodišnjim iskustvom u toj branši. 2023. godine krenula sam u samostalni obrt, pošto volim svakakve neobične i jedinstvene cvjetne kombinacije koje se mogu iskombinirati i s drvom. Tijekom naših svakodnevnih obiteljskih šetnji šumom počeli smo sa sakupljanjem od najmanjeg cvijeta, lista I grane, do komada drveta; i tako sam krenula u izradu daski, pladnjeva, zdjela, vaza, roto pladnjeva... Postojeću ponudu smo malo nadogradili i dodali epoxy smolu, te dobili još unikatnije stvari. Spojili smo ugodno s korisnim, te nam je od hobija prikupljanja drvenih stvari u šumi, došla ideja za uklopiti sve skupa u jednu cjelinu.",
        about_p17: "Hvala Vam na posjeti.",
 
        //Contact
