@@ -87,6 +87,8 @@ const TRANSLATIONS = {
        product2_category: "Ashtrays",
        product3_title: "Wood Cutting Board",
        product3_category: "Cutting Boards",
+       thank_you_title:"Thank You!",
+       thank_you_message:"Your message has been successfully sent. We’ll get back to you soon!",
        // ────────── English (en) ──────────
        product1_title: "Large Wooden Ashtray",
        product1_category: "Ashtrays",
@@ -418,6 +420,8 @@ const TRANSLATIONS = {
        product2_category: "Pepeljare",
        product3_title: "Drvena Daska za Rezanje",
        product3_category: "Daske za Rezanje",
+       thank_you_title:"Hvala vam!",
+       thank_you_message:"Vaša poruka je uspješno poslana. Uskoro ćemo vam se javiti!",
        // ────────── Croatian (hr) ──────────
        product1_title: "Velika Drvena Pepeljara",
        product1_category: "Pepeljare",
